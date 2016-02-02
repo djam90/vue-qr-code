@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>VueJS QR Code Generator</title>
+        <meta name="description" content="VueJS QR Code Generator">
+        <meta name="author" content="Daniel Twigg">
+
+        <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" crossorigin="anonymous">
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="page-header">Vue QR Code Generator</h1>
+            </div>
+
+            <div class="vue-app">
+                <fieldset class="form-group">
+                    <label for="height">QR Height</label>
+                    <input type="text" class="form-control" id="height" placeholder="Height" v-model="height" v-on:keyup="buildUrl">
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="width">QR Width</label>
+                    <input type="text" class="form-control" id="width" placeholder="Width" v-model="width" v-on:keyup="buildUrl">
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="height">QR Content</label>
+                    <input type="text" class="form-control" id="content" placeholder="Content" v-model="content" v-on:keyup="buildUrl">
+                </fieldset>
+
+                <img v-bind:src="fullUrl" alt="">
+            </div>
+
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.1.1/js/tether.min.js"></script>
+        <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js" crossorigin="anonymous"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
